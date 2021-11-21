@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<woss>
+	<server class="com.briup.environment.server.ServerImpl">
+		<port>39691</port>
+	</server>
+	<dbstore class="com.briup.environment.server.DBStoreImpl">
+		<driver>com.mysql.cj.jdbc.Driver</driver>
+		<url>jdbc:mysql://localhost:3306/emdc?serverTimezone=Hongkong&amp;characterEncoding=utf-8</url>
+		<username>ecjtu</username>
+		<password>123456</password>
+		<batch-size>500</batch-size>
+		<record_file>src/main/resources/radwtmp666</record_file>
+	</dbstore>
+	<client class="com.briup.environment.client.ClientImpl">
+		<ip>127.0.0.1</ip>
+		<port>39691</port>
+	</client>
+	<gather class="com.briup.environment.client.GatherImpl">
+		<src_file>src/main/resources/radwtmp</src_file>
+		<record_file>src/main/resources/radwtmp666</record_file>
+	</gather>
+	<backup class="com.briup.environment.util.BackUPImpl">
+		<parent-path>src/main/resources/radwtmp777</parent-path>
+	</backup>
+	<logger class="com.briup.environment.util.LogImpl">
+		<log-properties>src/main/resources/log4j.properties</log-properties>
+	</logger>
+</woss>
